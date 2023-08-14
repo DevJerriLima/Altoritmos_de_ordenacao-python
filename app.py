@@ -1,6 +1,6 @@
 import random
 
- 
+#bubble sort
 def bubble_sort(v):
     fim = len(v)
     
@@ -21,14 +21,32 @@ def bubble_sort(v):
         fim -= 1        
 
 
+#Selection sort
+def selection_sort(v):
+    n = len(v)
+    for j in range(n-1):
+        menor_valor_index = j
+        for i in range(j, n):
+            if v[i] < v[menor_valor_index]:
+                menor_valor_index = i
+        if v[j] > v[menor_valor_index]:
+            temp = v[j]
+            v[j]= v[menor_valor_index]
+            v[menor_valor_index] = temp
+        
+    
+    
+    
+    
+     
 
 
 
-
-vetor = list(range(0,50))
-
-random.shuffle(vetor)
+vetor = random.sample(range(1,100),10)
 
 print(vetor)
 
-bubble_sort(vetor)
+
+selection_sort(vetor)
+
+print(vetor)
